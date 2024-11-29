@@ -1,0 +1,46 @@
+.nav {
+  padding: 16px 0;
+  background-color: #FFC95C;
+}
+
+.nav__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+}
+
+.nav__link {
+  color: #141718;
+}
+
+.nav__btns {
+  display: flex;
+  gap: 17px;
+  align-items: center;
+}
+
+.nav__btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav__btn-count {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #141718;
+  color: var(--yellow);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+}
