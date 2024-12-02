@@ -5,5 +5,34 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+}
 
+
+.hero__container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-left: calc((100% - var(--container-width)) / 2 + (var(--container-width) / 2));
+  padding-right: calc((100% - var(--container-width)) / 2);
+}
+
+.hero__title {
+  margin-bottom: 8px;
+  font-size: 80px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -3px;
+  font-family: var(-font-accent);
+  color: #000000;
+
+  span {
+    color: #377DFF;
+  }
+}
+
+.hero__desc {
+  margin-bottom: 28px;
+  color: #121212;
+  font-size: 20px;
+  line-height: 1.6;
 }
