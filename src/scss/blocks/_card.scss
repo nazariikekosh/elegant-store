@@ -31,7 +31,13 @@
 
 .card__picture {
   max-width: 262px;
+  max-height: 349px;
   position: relative;
+
+  img {
+    max-width: 262px;
+    max-height: 349px;
+  }
 }
 
 .card__fav {
