@@ -4,21 +4,6 @@
 
 .colection__grid {
   display: grid;
-  grid-template-columns: repeat(2 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
-
-.plate {
-  position: relative;
-  background-color: #F3F5F7;
-}
-
-.plate__content {
-  position: absolute;
-
-}
-
-.plate--tall {}
-
-.pale__title {}
-
-.plate__link {}

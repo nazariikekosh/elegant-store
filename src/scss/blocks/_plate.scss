@@ -1,0 +1,53 @@
+.plate {
+  position: relative;
+  background-color: #F3F5F7;
+  padding-bottom: 50%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &--01 {
+    background-image: url('../../img/collection/01@2x.jpg');
+  }
+
+  &--02 {
+    background-image: url('../../img/collection/02@2x.jpg');
+  }
+
+  &--03 {
+    background-image: url('../../img/collection/03@2x.jpg');
+  }
+
+}
+
+.plate__content {
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: 40px;
+}
+
+.plate--tall {
+  grid-row: 1 / 3;
+}
+
+.pale__title {
+  margin-bottom: 12px;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.11;
+  letter-spacing: -0.6px;
+  color: #121212;
+}
+
+.plate__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #121212;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: -0.4px;
+  border-bottom: 1px solid #121212;
+}
