@@ -2,7 +2,7 @@
   position: relative;
   display: grid;
   gap: 12px;
-  max-width: 262px;
+  // max-width: 262px;
 
   &:hover {
     .card__btn {
@@ -30,12 +30,14 @@
 }
 
 .card__picture {
-  max-width: 262px;
+
   max-height: 349px;
   position: relative;
+  background-color: #F3F5F7;
+  text-align: center;
 
   img {
-    max-width: 262px;
+
     max-height: 349px;
   }
 }
