@@ -6,6 +6,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-bottom: 60px;
 }
 
 .logo__box {
@@ -39,23 +40,27 @@
 	gap: 40px;
 }
 
-.footer__item {}
 
 .footer__link {
 	color: #FEFEFE;
 	font-size: 14px;
 }
 
-.footer__row--border {}
+.footer__row--border {
+	border-top: 1px solid #6C7275;
+	padding-top: 16px;
+}
 
-.Copyright__box {}
+.copyright__box {
+	display: flex;
+	gap: 28px;
+}
 
-.Copyright__text {
+.copyright__text {
 	color: #E8ECEF;
 }
 
-.footer__social {}
-
-.social__link {}
-
-.social__icon {}
+.footer__social {
+	display: flex;
+	gap: 24px;
+}
