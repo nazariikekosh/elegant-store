@@ -5,6 +5,10 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @include tablet {
+    height: 500px;
+  }
 }
 
 
@@ -48,6 +52,12 @@
   letter-spacing: -3px;
   font-family: var(--font-accent);
   color: #000000;
+  text-wrap: balance;
+
+  @include tablet {
+    font-size: 60px;
+  }
+
 }
 
 .hero__title .text-left {
