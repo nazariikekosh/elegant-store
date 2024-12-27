@@ -18,6 +18,10 @@
   height: 100%;
   padding-left: calc((100% - var(--container-width)) / 2 + (var(--container-width) / 2));
   padding-right: calc((100% - var(--container-width)) / 2);
+
+  @include tablet {
+    padding-right: var(--container-padding);
+  }
 }
 
 @keyframes slide-in-left {

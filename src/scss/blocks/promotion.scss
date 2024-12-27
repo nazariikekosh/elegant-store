@@ -22,6 +22,10 @@
 .promotion__container {
   padding-left: calc((100% - var(--container-width)) / 2 + (var(--container-width) / 2));
   padding-right: calc((100% - var(--container-width)) / 2);
+
+  @include tablet {
+    padding-right: var(--container-padding);
+  }
 }
 
 
@@ -30,6 +34,12 @@
   padding-left: 72px;
   display: grid;
   gap: 24px;
+
+  @include tablet {
+    padding: 50px 0;
+    padding-left: 32px;
+  }
+
 }
 
 .promotion__desc {
@@ -58,7 +68,7 @@
   color: #121212;
   font-size: 20px;
   line-height: 1.6;
-
+  text-wrap: balance;
 }
 
 
