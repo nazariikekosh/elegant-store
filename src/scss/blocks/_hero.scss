@@ -9,6 +9,12 @@
   @include tablet {
     height: 500px;
   }
+
+  @include mobile {
+    height: auto;
+    padding-bottom: 390px;
+    background-image: url('../../img/hero/bg--mobile.jpg');
+  }
 }
 
 
@@ -21,6 +27,14 @@
 
   @include tablet {
     padding-right: var(--container-padding);
+  }
+
+  @include mobile {
+    padding: 40px var(--container-padding);
+    text-align: center;
+    justify-content: center;
+    height: auto;
+
   }
 }
 
@@ -62,6 +76,10 @@
     font-size: 60px;
   }
 
+  @include mobile {
+    font-size: 40px;
+  }
+
 }
 
 .hero__title .text-left {
@@ -95,4 +113,9 @@
   color: #121212;
   font-size: 20px;
   line-height: 1.6;
+
+  @include mobile {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
 }
