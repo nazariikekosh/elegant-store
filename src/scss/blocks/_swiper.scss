@@ -1,5 +1,9 @@
 .swiper-slide {
   width: 262px !important;
+
+  @include mobile {
+    width: 231px !important;
+  }
 }
 
 .swiper-pagination {

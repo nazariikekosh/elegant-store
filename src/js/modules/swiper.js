@@ -4,10 +4,15 @@ import 'swiper/css/bundle';
 const swiper = new Swiper('.swiper', {
   loop: false,
   slidesPerView: 'auto',
-  spaceBetween: 24,
+  spaceBetween: 12,
   pagination: {
     el: '.swiper-pagination',
     clickable: true
+  },
+  breakpoints: {
+    840: {
+      spaceBetween: 24
+    }
   }
 });
 

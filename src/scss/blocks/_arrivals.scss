@@ -1,5 +1,9 @@
 .arrivals {
   padding: 48px 0;
+
+  @include mobile {
+    padding: 32px 0;
+  }
 }
 
 .arrivals__row {
@@ -7,6 +11,11 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 48px;
+
+  @include mobile {
+    margin-bottom: 40px;
+  }
+
 }
 
 .arrivals__slider {
