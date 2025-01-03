@@ -1,5 +1,10 @@
 .colection__title {
   padding: 48px 0;
+
+  @include mobile {
+    padding: 40px 0 16px;
+    text-align: center;
+  }
 }
 
 .colection__grid {

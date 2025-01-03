@@ -7,7 +7,8 @@ const swiper = new Swiper('.swiper', {
   spaceBetween: 12,
   pagination: {
     el: '.swiper-pagination',
-    clickable: true
+    clickable: true,
+    dynamicBullets: true
   },
   breakpoints: {
     840: {
