@@ -1,13 +1,27 @@
 .bestseller {
   padding-bottom: 100px;
+
+  @include mobile {
+    padding-bottom: 40px;
+  }
 }
 
 .bestseller__title {
   padding: 48px 0;
+
+  @include mobile {
+    padding: 40px 0 16px;
+    text-align: center;
+  }
 }
 
 .bestseller__cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(262px, 1fr));
   gap: 48px 24px;
+
+  @include mobile {
+    gap: 16px 8px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
 }

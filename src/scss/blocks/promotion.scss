@@ -16,6 +16,10 @@
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+
+    @include mobile {
+      display: none;
+    }
   }
 }
 
@@ -24,6 +28,11 @@
   padding-right: calc((100% - var(--container-width)) / 2);
 
   @include tablet {
+    padding-right: var(--container-padding);
+  }
+
+  @include mobile {
+    padding-left: var(--container-padding);
     padding-right: var(--container-padding);
   }
 }
@@ -40,6 +49,9 @@
     padding-left: 32px;
   }
 
+  @include mobile {
+    padding: 28px 0;
+  }
 }
 
 .promotion__desc {
@@ -62,6 +74,10 @@
   letter-spacing: -0.4px;
   line-height: 1.1;
   font-family: var(--font-accent);
+
+  @include mobile {
+    font-size: 34px;
+  }
 }
 
 .promotion__text {
@@ -69,6 +85,10 @@
   font-size: 20px;
   line-height: 1.6;
   text-wrap: balance;
+
+  @include mobile {
+    font-size: 14px;
+  }
 }
 
 
