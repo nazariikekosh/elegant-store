@@ -1,5 +1,9 @@
 .footer {
 	background-color: #141718;
+
+	@include mobile {
+		padding: 48px 0;
+	}
 }
 
 .footer__row {
@@ -7,12 +11,22 @@
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 60px;
+
+	@include mobile {
+		margin-bottom: 40px;
+		flex-direction: column;
+	}
 }
 
 .logo__box {
 	display: flex;
 	align-items: center;
 	gap: 32px;
+
+	@include mobile {
+		flex-direction: column;
+		gap: 16px;
+	}
 }
 
 .logo__text {
@@ -33,11 +47,31 @@
 	line-height: 22px;
 	border-left: 1px solid #6C7275;
 	padding-left: 32px;
+
+	@include mobile {
+		border-left: none;
+		border-top: 1px solid #6C7275;
+		padding-left: 0;
+		padding-top: 16px;
+	}
 }
 
 .footer__list {
 	display: flex;
 	gap: 40px;
+
+	@include mobile {
+		gap: 24px;
+		flex-direction: column;
+		margin-top: 40px;
+		align-items: center;
+	}
+}
+
+.footer__links {
+	display: flex;
+	gap: 28px;
+
 }
 
 
@@ -49,18 +83,37 @@
 .footer__row--border {
 	border-top: 0.5px solid #6C7275;
 	padding-top: 16px;
+
+	@include mobile {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 32px;
+	}
 }
 
 .copyright__box {
 	display: flex;
 	gap: 28px;
+
+	@include mobile {
+		flex-direction: column;
+	}
 }
 
 .copyright__text {
 	color: #E8ECEF;
+
+	@include mobile {
+		order: 2;
+	}
 }
 
 .footer__social {
 	display: flex;
 	gap: 24px;
+
+	@include mobile {
+		order: -1;
+	}
 }

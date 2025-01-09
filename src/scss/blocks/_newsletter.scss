@@ -8,16 +8,30 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @include tablet {
+    background-image: none;
+  }
+
+  @include mobile {
+    height: auto;
+    padding: 95px 32px;
+  }
 }
 
 .newsletter__content {
-  max-width: 488px;
+  max-width: 552px;
   flex-grow: 1;
   text-align: center;
+  padding: 0 var(--container-padding);
 }
 
 .newsletter__title {
   margin-bottom: 8px;
+
+  @include mobile {
+    font-size: 28px;
+  }
 }
 
 .newsletter__desc {
@@ -25,6 +39,10 @@
   line-height: 1.6666;
   color: #121212;
   margin-bottom: 32px;
+
+  @include mobile {
+    font-size: 14px;
+  }
 }
 
 .form-newsletter {
