@@ -64,3 +64,24 @@
 	line-height: 1.57;
 	color: #6C7275;
 }
+
+.mobile-nav__item {
+	padding: 16px 0;
+	border-bottom: 1px solid #E8ECEF;
+
+
+}
+
+.mobile-nav__link {
+	color: #141718;
+
+	&--grey {
+		color: #6C7275;
+		font-size: 18px;
+	}
+}
+
+.mobile-nav__socials {
+	display: flex;
+	gap: 24px;
+}
