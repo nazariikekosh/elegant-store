@@ -6,6 +6,15 @@
 	height: 100%;
 	width: 100%;
 	z-index: 9;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.2s ease-in;
+
+	&--open {
+		display: block;
+		opacity: 1;
+		pointer-events: all;
+	}
 }
 
 .mobile-nav {
@@ -20,6 +29,16 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	opacity: 0;
+	pointer-events: none;
+	transform: translateX(-50%);
+	transition: all 0.2s ease-in;
+
+	&--open {
+		opacity: 1;
+		pointer-events: all;
+		transform: translateX(0%);
+	}
 }
 
 .mobile-nav__top {
@@ -68,8 +87,15 @@
 .mobile-nav__item {
 	padding: 16px 0;
 	border-bottom: 1px solid #E8ECEF;
+	font-size: 14px;
+	display: flex;
+	justify-content: space-between;
 
 
+}
+
+.nav__btn span {
+	color: #fff;
 }
 
 .mobile-nav__link {
