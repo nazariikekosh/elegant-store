@@ -2,6 +2,9 @@
 const cartBtn = document.getElementById("cart-btn"); // Кнопка для відкриття popup
 const shoppingPopup = document.getElementById("shoppingPopup"); // Popup елемент
 const closePopup = document.getElementById("closePopup"); // Кнопка закриття popup
+const cartCountSpan = document.querySelector(".nav__btn-count"); // Лічильник у кнопці
+const shoppingBagItems = document.getElementById("shoppingBagItems"); // Список товарів
+const emptyBagMessage = document.getElementById("emptyBagMessage"); // Повідомлення "кошик порожній"
 
 // Відкрити popup
 cartBtn.addEventListener("click", () => {
@@ -15,15 +18,31 @@ closePopup.addEventListener("click", () => {
 
 // Закрити popup при кліку поза його вмістом
 shoppingPopup.addEventListener("click", (event) => {
-  // Перевіряємо, чи натиснули саме на фонову область (не на контент)
   if (event.target === shoppingPopup) {
     shoppingPopup.style.display = "none"; // Ховаємо popup
   }
 });
 
-// Отримуємо всі кнопки збільшення та зменшення кількості
-const incrementButtons = document.querySelectorAll(".increment");
-const decrementButtons = document.querySelectorAll(".decrement");
+// Функція для оновлення кількості товарів у кнопці
+function updateCartCount() {
+  const quantityValues = shoppingBagItems.querySelectorAll(".quantity-value");
+  let totalItems = 0;
+
+  quantityValues.forEach((quantitySpan) => {
+    totalItems += parseInt(quantitySpan.textContent, 10);
+  });
+
+  cartCountSpan.textContent = totalItems;
+
+  // Якщо кількість товарів у кошику = 0, ховаємо лічильник та показуємо повідомлення
+  if (totalItems === 0) {
+    cartCountSpan.style.display = "none"; // Ховаємо лічильник
+    emptyBagMessage.style.display = "block"; // Показуємо повідомлення
+  } else {
+    cartCountSpan.style.display = "inline-block"; // Показуємо лічильник
+    emptyBagMessage.style.display = "none"; // Ховаємо повідомлення
+  }
+}
 
 // Функція для оновлення ціни
 function updatePrice(quantityElement, priceElement, basePrice) {
@@ -32,68 +51,57 @@ function updatePrice(quantityElement, priceElement, basePrice) {
   priceElement.textContent = `$${newPrice}`; // Оновлюємо ціну в DOM
 }
 
-// Додаємо події на кнопки
-incrementButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const quantityElement = button.previousElementSibling; // Кількість
-    const priceElement = button.parentElement.nextElementSibling; // Ціна
-    const basePrice = parseInt(quantityElement.dataset.price); // Базова ціна товару
+// Додавання подій для кнопок
+function attachEventListeners() {
+  const incrementButtons = shoppingBagItems.querySelectorAll(".increment");
+  const decrementButtons = shoppingBagItems.querySelectorAll(".decrement");
+  const removeButtons = shoppingBagItems.querySelectorAll(".shopping-bag__remove");
 
-    // Збільшуємо кількість
-    let quantity = parseInt(quantityElement.textContent);
-    quantity++;
-    quantityElement.textContent = quantity;
+  incrementButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const quantityElement = button.previousElementSibling; // Кількість
+      const priceElement = button.parentElement.nextElementSibling; // Ціна
+      const basePrice = parseInt(quantityElement.dataset.price); // Базова ціна товару
 
-    // Оновлюємо ціну
-    updatePrice(quantityElement, priceElement, basePrice);
-  });
-});
-
-decrementButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const quantityElement = button.nextElementSibling; // Кількість
-    const priceElement = button.parentElement.nextElementSibling; // Ціна
-    const basePrice = parseInt(quantityElement.dataset.price); // Базова ціна товару
-
-    // Зменшуємо кількість (мінімум 1)
-    let quantity = parseInt(quantityElement.textContent);
-    if (quantity > 1) {
-      quantity--;
+      // Збільшуємо кількість
+      let quantity = parseInt(quantityElement.textContent);
+      quantity++;
       quantityElement.textContent = quantity;
 
-      // Оновлюємо ціну
+      // Оновлюємо ціну та кількість товарів
       updatePrice(quantityElement, priceElement, basePrice);
-    }
+      updateCartCount();
+    });
   });
-});
 
-// Отримуємо елементи
-const removeButtons = document.querySelectorAll(".shopping-bag__remove");
-const shoppingBagItems = document.getElementById("shoppingBagItems");
-const emptyBagMessage = document.getElementById("emptyBagMessage");
+  decrementButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const quantityElement = button.nextElementSibling; // Кількість
+      const priceElement = button.parentElement.nextElementSibling; // Ціна
+      const basePrice = parseInt(quantityElement.dataset.price); // Базова ціна товару
 
-// Функція для перевірки, чи кошик порожній
-function checkIfBagIsEmpty() {
-  const items = shoppingBagItems.querySelectorAll(".shopping-bag__item");
-  if (items.length === 0) {
-    emptyBagMessage.style.display = "block"; // Показати повідомлення
-  } else {
-    emptyBagMessage.style.display = "none"; // Сховати повідомлення
-  }
+      // Зменшуємо кількість (мінімум 1)
+      let quantity = parseInt(quantityElement.textContent);
+      if (quantity > 1) {
+        quantity--;
+        quantityElement.textContent = quantity;
+
+        // Оновлюємо ціну та кількість товарів
+        updatePrice(quantityElement, priceElement, basePrice);
+        updateCartCount();
+      }
+    });
+  });
+
+  removeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = button.parentElement; // Знаходимо відповідний товар
+      item.remove(); // Видаляємо товар з DOM
+      updateCartCount(); // Перевіряємо кількість товарів
+    });
+  });
 }
 
-// Додаємо подію на кнопки видалення
-removeButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const item = button.parentElement; // Знаходимо відповідний товар
-    item.remove(); // Видаляємо товар з DOM
-    checkIfBagIsEmpty(); // Перевіряємо, чи залишилися товари
-  });
-});
-
-// Перевіряємо стан кошика при завантаженні сторінки
-checkIfBagIsEmpty();
-
-
-
-export default cardPopap;
+// Додаємо події при завантаженні сторінки
+attachEventListeners();
+updateCartCount();

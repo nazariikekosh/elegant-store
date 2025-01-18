@@ -119,6 +119,7 @@
     padding: 20px;
     position: relative;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
   }
 
   &__close {
@@ -137,6 +138,8 @@
 
   .shopping-bag__title {
     margin-bottom: 10px;
+    text-wrap: wrap;
+
   }
 
   .shopping-bag__image {
@@ -147,8 +150,9 @@
 
   .shopping-bag__item {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    margin-bottom: 10px;
   }
 
   .shopping-bag__empty-message {
@@ -156,6 +160,19 @@
     font-size: 18px;
     color: #555;
     margin-top: 20px;
+  }
+
+  .shopping-bag__details {
+    font-size: 14px;
+    max-width: 200px;
+  }
+
+  .shopping-bag__quantity {
+    font-size: 14px;
+  }
+
+  .shopping-bag__price {
+    font-size: 14px;
   }
 
 }
