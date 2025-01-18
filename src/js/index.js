@@ -10,6 +10,9 @@ swiper();
 import timer from './modules/timer.js';
 timer();
 
+import cardPopap from './modules/card-popap.js';
+cardPopap();
+
 
 
 
