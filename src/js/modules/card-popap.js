@@ -105,3 +105,6 @@ function attachEventListeners() {
 // Додаємо події при завантаженні сторінки
 attachEventListeners();
 updateCartCount();
+
+
+
