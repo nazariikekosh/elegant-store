@@ -48,7 +48,7 @@
         </button>
         <button class="nav__btn nav__btn--cart" id="cart-btn">
           <img src="./img/icons/cart.svg" alt="Icon">
-          <span class="nav__btn-count">2</span>
+          <span class="nav__btn-count"></span>
         </button>
       </div>
     </div>
@@ -61,36 +61,19 @@
     <div class="shopping-bag">
       <h2 class="shopping-bag__title">Shopping Bag</h2>
       <div id="shoppingBagItems">
-        <div class="shopping-bag__item">
-          <button class="shopping-bag__remove">✕</button>
-          <img src="./img/collection/01@2x.jpg" alt="Product Image" class="shopping-bag__image" />
-          <div class="shopping-bag__details">
-            <h3 class="shopping-bag__name">Common Projects Bball High</h3>
-            <p class="shopping-bag__color">White</p>
-          </div>
-          <div class="shopping-bag__quantity">
-            <button class="quantity-btn decrement">−</button>
-            <span class="quantity-value" data-price="549" id="quantity1">1</span>
-            <button class="quantity-btn increment">+</button>
-          </div>
-          <p class="shopping-bag__price" id="price1">$549</p>
-        </div>
-        <div class="shopping-bag__item">
-          <button class="shopping-bag__remove">✕</button>
-          <img src="./img/bestseller/02.jpg" alt="Product Image" class="shopping-bag__image" />
-          <div class="shopping-bag__details">
-            <h3 class="shopping-bag__name">Maison Margiela Future Sneakers</h3>
-            <p class="shopping-bag__color">White</p>
-          </div>
-          <div class="shopping-bag__quantity">
-            <button class="quantity-btn decrement">−</button>
-            <span class="quantity-value" data-price="870" id="quantity2">1</span>
-            <button class="quantity-btn increment">+</button>
-          </div>
-          <p class="shopping-bag__price" id="price2">$870</p>
-        </div>
+        <!-- Сюди JS буде додавати товари -->
       </div>
-      <p id="emptyBagMessage" class="shopping-bag__empty-message" style="display: none;">Your shopping bag is empty.</p>
+      <p id="emptyBagMessage" class="shopping-bag__empty-message" style="display: none;">
+        Your shopping bag is empty.
+      </p>
+      <div class="shopping-bag__totals">
+        <p>Total Items: <span id="totalItems">0</span></p>
+        <p>Total Price: $<span id="totalPrice">0.00</span></p>
+      </div>
+      <div class="shopping-bag__actions">
+        <button id="placeOrderBtn">Place Order</button>
+        <button id="continueShoppingBtn">Continue Shopping</button>
+      </div>
     </div>
   </div>
 </div>

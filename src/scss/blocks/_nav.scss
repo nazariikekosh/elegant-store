@@ -151,6 +151,11 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+
+
   }
 
   .shopping-bag__empty-message {
@@ -172,5 +177,32 @@
   .shopping-bag__price {
     font-size: 14px;
   }
+
+  .shopping-bag__totals {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .shopping-bag__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .shopping-bag__actions button {
+    padding: 7px 12px;
+    background-color: #FFC95C;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .shopping-bag__actions button:hover {
+    background-color: #e5b43d;
+  }
+
 
 }
