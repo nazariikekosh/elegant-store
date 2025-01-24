@@ -69,3 +69,15 @@
     color: #141718;
   }
 }
+
+.form-newsletter__error {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 8px;
+  display: none;
+  text-align: left;
+}
+
+.form-newsletter__input.error {
+  border-color: #ff0000;
+}

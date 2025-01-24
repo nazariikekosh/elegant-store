@@ -13,6 +13,19 @@ timer();
 import cardPopap from './modules/card-popap.js';
 cardPopap();
 
+import notification from './modules/notification.js';
+notification();
+
+import validateEmail from './modules/validateEmail.js';
+validateEmail();
+
+
+
+
+
+
+
+
 
 
 
