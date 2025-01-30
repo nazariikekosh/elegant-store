@@ -19,6 +19,9 @@ notification();
 import validateEmail from './modules/validateEmail.js';
 validateEmail();
 
+import heroBg from './modules/hero-bg.js';
+heroBg();
+
 
 
 

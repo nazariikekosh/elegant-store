@@ -1,7 +1,6 @@
 .hero {
   height: 820px;
   background-color: #FFC95C;
-  background-image: url('../../img/hero/bg.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -13,7 +12,6 @@
   @include mobile {
     height: auto;
     padding-bottom: 390px;
-    background-image: url('../../img/hero/bg--mobile.jpg');
   }
 }
 

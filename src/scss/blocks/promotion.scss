@@ -3,27 +3,27 @@
   background-color: rgba(255, 170, 0, 0.4);
   display: grid;
   gap: 24px;
+}
 
-  &::after {
-    content: "";
-    display: block;
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-image: url('../../img/promotion/bg.jpg');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.promotion__bg {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-    @include mobile {
-      position: static;
-      height: 367px;
-      width: 100%;
-    }
+@media (max-width: 768px) {
+  .promotion__bg {
+    position: static;
+    width: 100%;
+    height: 367px;
   }
 }
+
 
 .promotion__container {
   padding-left: calc((100% - var(--container-width)) / 2 + (var(--container-width) / 2));
@@ -104,7 +104,3 @@
   font-size: 16px;
   line-height: 1.625;
 }
-
-.promotion__btn {}
-
-.btn {}
